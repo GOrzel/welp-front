@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th *ngFor="let head of config">
+    {{head.text || head.key | uppercase }}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of data">
+    <td *ngFor="let row of config">
+    <div [ngSwitch]="row.type">
+      <div *ngSwitchCase="'input'">
+        <input type="text" [(ngModel)]="item[row.key]">
+      </div>
+      <div *ngSwitchCase="'img'">
+        <img [src]="item[row.key]" width="50px;">
+      </div>
+      <div *ngSwitchCase="'button'">
+        <button (click)="action(row.text, item.id, item[row.arg])">{{row.text | uppercase}}</button>
+      </div>
+      <div *ngSwitchCase="'object'">
+        <div>{{item[row.key][row.variable]}}</div>
+      </div>
+      <div *ngSwitchDefault>
+        <div>{{item[row.key]}}</div>
+      </div>
+    </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-9">
+    <div class="row">
+      <div class="col-2">
+        <app-add-foodplace (foodPlaceAdder)="addFoodPlace($event)"></app-add-foodplace>
+      </div>
+    </div>
+    <app-data-grid [data]="foodplaces" [config]="config" (actionEvent)="action($event)"></app-data-grid>
+  </div>
+</div>

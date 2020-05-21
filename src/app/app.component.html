@@ -1,0 +1,15 @@
+<div class="container-fluid">
+
+  <nav class="nav nav-pills">
+    <a routerLink="foodplaces" routerLinkActive="active" class="nav-item nav-link">Food places</a>
+    <a routerLink="users" routerLinkActive="active" class="nav-item nav-link">Users</a>
+    <a routerLink="register" routerLinkActive="active" class="nav-item nav-link">Register</a>
+    <app-auth></app-auth>
+  </nav>
+
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

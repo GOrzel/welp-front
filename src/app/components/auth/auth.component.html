@@ -1,0 +1,8 @@
+<!-- {{f.value|json}} -->
+<!-- {{f.valid|json}} -->
+<form *ngIf="!authService.access" #f="ngForm" (submit)="logIn(f.value)">
+  <input ngModel="admin" required name="username" type="text">
+  <button [disabled]="f.invalid" class="btn btn-primary">login</button>
+</form>
+
+<button *ngIf="authService.access" (click)="logOut()" class="btn btn-danger">Log out</button>

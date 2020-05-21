@@ -1,0 +1,23 @@
+<div class="row">
+      
+  <div class="col-6">
+<!--    <pre>{{form.value|json}}</pre>-->
+    <h3>Add new user</h3>
+  </div>
+      
+  <div class="col-6">
+
+    <form [formGroup]="form" (submit)="addUser(form.value)">
+                  
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="login" placeholder="Username">
+<!--        <div class="badge badge-danger">{{form.get('username').errors | json}}</div>-->
+
+      </div>
+
+      <button id="submitAddUser" class="btn btn-secondary">OK</button>
+              
+    </form>
+        
+  </div>
+</div>
